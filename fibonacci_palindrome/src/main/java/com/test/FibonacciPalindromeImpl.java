@@ -51,7 +51,7 @@ public class FibonacciPalindromeImpl implements FibonacciPalindrome {
      * To find Fibonacci sequence in Palindrome seq
      * <p>
      *
-     * @param sequence 
+     * @param sequence
      * @return A Pair(startIndex, length)
      */
     private static Pair findOutFibonacci(List<Integer> sequence){
@@ -77,15 +77,15 @@ public class FibonacciPalindromeImpl implements FibonacciPalindrome {
      * @param s
      * @param left
      * @param right
-     * 
+     *
      * @return A Pair(startIndex, length)
      */
     private static int getMaxLength(List<Integer> s, int left, int right) {
-        int L = left, R = right;
-        while (L >= 0 && R < s.size() && s.get(L) == s.get(R)) {
-            L--;
-            R++;
+        int leftPrototype = left, rightPrototype= right;
+        while (leftPrototype >= 0 && rightPrototype < s.size() && s.get(leftPrototype) == s.get(rightPrototype)) {
+            leftPrototype--;
+            rightPrototype++;
         }
-        return R - L - 1;
+        return rightPrototype - leftPrototype - 1;
     }
 }
